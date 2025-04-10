@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <h1>Hello, world!</h1>
+    <h2>I'm Stanley</h2>
+    <p>Welcome to my first webpage.</p>
+    <p>My name is Stanley. And for your information, Kai is fat, Eric is short, Kyle is Kyle. My age is 15 years old, and i'm a man.</p>
+    <a href="https://www.youtube.com">Visit my favourite website </a>
+    <img src="kaws.webp" alt="Kaws">
+    <h1>My hobbies</h1>
+    <ul>
+        <li>Badminton</li>
+        <li>Video games</li>
+        <li>Hang out with friends</li>
+    </ul>
+    <h1 id="Welcome_to_my_page">Hola</h1>
+    <a href="project_1.html">
+      <button>View Science Fair</button>
+    <a href="project_2.html">
+      <button>Funny School Stuff</button>
+    <a href="project_3.html">
+      <button>IRL Stuff</button>
+    </a>
+    <button onclick="showMessage()">Click Me</button>
+    <button id="colorBtn">Change Background Color</button>
+    <script>
+      let colorInterval;
+      let hue = 200;  // Start from a calm blue color
+      const saturation = 30;  // Lower saturation for a more muted look
+      const lightness = 70;   // Lightness to make the colors soft and comfortable
+    
+      function changeRainbowColor() {
+          document.body.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+          hue = (hue + 2) % 360;  // Slowly cycle through hues for a smoother transition
+      }
+    
+      const colorBtn = document.getElementById('colorBtn');
+    
+      // Start color change when the button is pressed
+      colorBtn.addEventListener('mousedown', () => {
+          colorInterval = setInterval(changeRainbowColor, 100); // Slower color change for smooth transition
+      });
+    
+      // Stop when the button is released
+      window.addEventListener('mouseup', () => {
+          clearInterval(colorInterval);
+      });
+    </script>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="displayGreeting()">Submit</button>
+    <p id="greeting"></p>
+    <input type="text" id="colorInput" placeholder="Enter your favorite color">
+    <button onclick="changeBgColorUser()">Change Background</button>
+    <div class="container">
+    <h2><strong>Age Checker</strong></h2>
+    <input type="number" id="ageInput" placeholder="Enter age">
+    <button onclick="checkAge()">Check Age</button>
+  </div>
+  <hr>
+  <h2>Mini Instagram</h2>
+  <p>Click the image below to like it. Double click to unlike.</p>
+  <img src="FSS8.JPG" onclick="favorite()" ondblclick="unfavorite()" alt="Hiking Image">
+  <div id="message"></div>
+  </body>
+</html>
